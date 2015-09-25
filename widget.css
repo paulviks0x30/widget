@@ -1,0 +1,36 @@
+.koleo-widget-container {
+	background: #293373;
+  padding: 30px;
+  width: 300px;
+}
+
+img {
+  margin-bottom: 30px;
+}
+
+input {
+  display: block;
+  width: 300px;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  height: 56px;
+  padding-left: 30px;
+  font-size: 0.8125rem;
+}
+
+input[type="text"], input[type="text"]:focus, {
+	box-shadow: none;
+	background-repeat: no-repeat;
+	text-transform: uppercase;
+}
+
+input[type="submit"] {
+  height: 56px;
+  background-color: #5ec6c5;
+  color: white;
+  letter-spacing: 1.25px;
+  font-size: 13px;
+  border: none;
+}
