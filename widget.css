@@ -1,25 +1,27 @@
 .koleo-widget-container {
 	background: #293373;
-  padding: 30px;
-  width: 300px;
+  padding: 20px;
+  width: 260px;
   font-family: Roboto;
+  color: #293373;
 }
 
 img {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 input {
   display: block;
-  width: 300px;
-  margin-bottom: 5px;
+  width: 260px;
+  margin-top: 5px;
 }
 
 input[type="text"] {
-  height: 56px;
+  height: 46px;
   padding-left: 30px;
   font-size: 0.8125rem;
   text-transform: uppercase;
+  color: #293373;
 }
 
 input[type="text"], input[type="text"]:focus, {
@@ -29,7 +31,7 @@ input[type="text"], input[type="text"]:focus, {
 }
 
 input[type="submit"] {
-  height: 56px;
+  height: 46px;
   background-color: #5ec6c5;
   color: white;
   letter-spacing: 1.25px;
