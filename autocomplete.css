@@ -1,0 +1,35 @@
+div ul.autocomplete {
+  border: solid 1px #d8d8d8;
+  padding: 0;
+  min-height: 0;
+  width: 298px !important;
+}
+
+div ul.autocomplete li {
+  border-top: solid 1px #d8d8d8;
+  text-transform: uppercase;
+}
+
+div ul.autocomplete li p.title, div ul.autocomplete li p { 
+  font-size: 0.8rem;
+  font-weight: normal; 
+  margin-left: 26px;
+}
+  
+div ul.autocomplete span {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+div ul.autocomplete li.active:not(.noResults) {
+  color: white;
+  background-color: #293373;
+  background-image: url("http://sandbox.koleo.pl/assets/dropdown_selector_active.png");
+}
+
+div ul.autocomplete li:not(.noResults) {
+  background-image: url("http://sandbox.koleo.pl/assets/dropdown_selector.png");
+  background-position: 5% 50%;
+  background-size: 6px;
+  background-repeat: no-repeat;
+}

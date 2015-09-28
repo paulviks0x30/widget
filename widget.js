@@ -2,27 +2,23 @@ $(document).on('ready', function() {
 	insertWidget();
 	addStyles();
 	bindDatePicker();
+	showLiveSearch();
 
-	$('#koleo-widget input[type="text"]').on('keyup', function(event) {
-		var stringFragment = $(event.target).val(); 
+	// $('#koleo-widget input[type="text"]').on('keyup', function(event) {
+	// 	var stringFragment = $(event.target).val(); 
 	
-		$.ajax({
-			url: 'http://localhost:3000/ls?callback=?&q=' + stringFragment,
-			dataType: 'jsonp',
+	// 	$.ajax({
+	// 		url: 'http://localhost:3000/ls?callback=?&q=' + stringFragment,
+	// 		dataType: 'jsonp',
 
-			success: function(data) {
-				console.log(data);
-			   var names = $.map(data.stations, function(elem, i) {
-			   		return elem.name; 	
-			   });
-			   console.log(names)
-			   showLiveSearch(names);
-			},
-			error: function(data) {
-				console.log(data);
-			}
-		});
-	});
+	// 		success: function(data) {
+	// 		   showLiveSearch(event.target, data.stations);
+	// 		},
+	// 		error: function(data) {
+	// 			console.log(data);
+	// 		}
+	// 	});
+	// });
 
 	$('#koleo-widget').on('submit', function(event) {
 		event.preventDefault();
@@ -60,17 +56,53 @@ function addStyles() {
 	var cssLink2 = $("<link>", { 
 	    rel: "stylesheet", 
 	    type: "text/css", 
+	    href: "autocomplete.css" 
+	});
+
+	var cssLink3 = $("<link>", { 
+	    rel: "stylesheet", 
+	    type: "text/css", 
+	    href: "awesomecomplete.css" 
+	});
+
+	var cssLink4 = $("<link>", { 
+	    rel: "stylesheet", 
+	    type: "text/css", 
 	    href: "foundation-datetimepicker.css" 
 	});
 	
 	cssLink.appendTo('head');
 	cssLink2.appendTo('head');
+	cssLink3.appendTo('head');
+	cssLink4.appendTo('head');
 }
 
-function showLiveSearch(names) {
-	$.each(names, function(elem, i) {
-		var nameElement = $('<li class="station-name">' + elem.name + '</li>');
-		nameElement.appendTo('ul.live-search');
+function showLiveSearch() {
+	$('#start_station, #end_station').awesomecomplete({
+	  	noResultsMessage: 'Nie ma takiej stacji.',
+	  	dataMethod: getData,
+	  	valueFunction: function(dataItem) {
+		    return dataItem.name;
+		},
+		renderFunction: function(dataItem) {
+			return '<p class="title">' + dataItem.name + '</p>';
+		},
+		highlightMatches: false
+	});
+}
+
+var getData = function(term, $awesomecomplete, onData) {
+	$.ajax({
+		url: 'http://localhost:3000/ls?callback=?&q=' + term,
+		dataType: 'jsonp',
+
+		success: function(data) {
+		   onData(data.stations);
+		},
+
+		error: function(data) {
+			console.log(data);
+		}
 	});
 }
 
