@@ -31,10 +31,10 @@ function insertWidget() {
 }
 
 function addStyles() {
-	var cssLink = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget.css" });
-	var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "autocomplete.css" });
-	var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "awesomecomplete.css" });
-	var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "foundation-datetimepicker.css" });
+	var cssLink = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/widget.css" });
+	var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/autocomplete.css" });
+	var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/awesomecomplete.css" });
+	var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/foundation-datetimepicker.css" });
 	var cssLink5 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://fonts.googleapis.com/css?family=Roboto" });
 
 	cssLink.appendTo('head');
