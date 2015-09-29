@@ -20,7 +20,7 @@ $(document).on('ready', function() {
 
 		var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':' + minutes;
 
-		window.location = 'http://sandbox.koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate; 
+		window.location = 'http://sandbox.koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location; 
 	});
 });
 
