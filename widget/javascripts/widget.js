@@ -25,23 +25,21 @@ $(document).on('ready', function() {
 });
 
 function insertWidget() {
-	var html = '<img src="http://koleo.pl/assets/logo.png"><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="OD"><input id="end_station" name="end_station" type="text" placeholder="DO"><input id="date" name="date" type="text" placeholder="KIEDY"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
+	var html = '<a href="https://koleo.pl"><img src="http://koleo.pl/assets/logo.png"></a><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="Z"><input id="end_station" name="end_station" type="text" placeholder="DO"><input id="date" name="date" type="text" placeholder="KIEDY"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
 	var container = $('.koleo-widget-container');
 	container.append(html);
 }
 
 function addStyles() {
-	var cssLink = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/widget.css" });
-	var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/autocomplete.css" });
-	var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/awesomecomplete.css" });
-	var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/foundation-datetimepicker.css" });
-	var cssLink5 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://fonts.googleapis.com/css?family=Roboto" });
+	var cssLink = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/widget.css" });
+	var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/autocomplete.css" });
+	var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/awesomecomplete.css" });
+	var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/foundation-datetimepicker.css" });
 
 	cssLink.appendTo('head');
 	cssLink2.appendTo('head');
 	cssLink3.appendTo('head');
 	cssLink4.appendTo('head');
-	cssLink5.appendTo('head');
 }
 
 function showLiveSearch() {
