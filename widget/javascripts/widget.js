@@ -1,6 +1,5 @@
 var KoleoWidget = {
     SPECIAL_CHAR_REGEXP:       (/[_|\/|\s]+/g),
-    NON_ALPHA_NUMERIC_REGEXP:  (/[^a-z0-9\-]+/gi),
     MULTI_SEPARATOR_REGEXP:    (/[\-]+/g),
     TRIM_SEPARATOR_REGEXP:     (/^-+|-+$/g),
     TRIM_WHITESPACE_REGEXP:    (/^(\s|\u00A0)+|(\s|\u00A0)+$/g),
@@ -138,7 +137,6 @@ var KoleoWidget = {
         }
 
         return string.replace(this.SPECIAL_CHAR_REGEXP, this.SEPARATOR)    // replace underscores, slashes and spaces with separator
-                     // .replace(NON_ALPHA_NUMERIC_REGEXP, EMPTY)   // remove non-alphanumeric characters except the separator
                      .replace(this.MULTI_SEPARATOR_REGEXP, this.SEPARATOR) // replace multiple occurring separators
                      .replace(this.TRIM_SEPARATOR_REGEXP, this.EMPTY)      // trim leading and trailing separators 
                      .replace('.', this.SEPARATOR)                    // replace dots with separator
