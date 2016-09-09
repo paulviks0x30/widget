@@ -20,12 +20,12 @@ $(document).on('ready', function() {
 
 		var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':' + minutes;
 
-		window.location = 'http://widget.koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location; 
+		window.location = 'http://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location; 
 	});
 });
 
 function insertWidget() {
-	var html = '<img src="http://widget.koleo.pl/assets/logo.png"><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="OD"><input id="end_station" name="end_station" type="text" placeholder="DO"><input id="date" name="date" type="text" placeholder="KIEDY"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
+	var html = '<img src="http://koleo.pl/assets/logo.png"><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="OD"><input id="end_station" name="end_station" type="text" placeholder="DO"><input id="date" name="date" type="text" placeholder="KIEDY"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
 	var container = $('.koleo-widget-container');
 	container.append(html);
 }
@@ -61,7 +61,7 @@ function showLiveSearch() {
 
 var getData = function(term, $awesomecomplete, onData) {
 	$.ajax({
-		url: 'http://widget.koleo.pl/ls?callback=?&q=' + term,
+		url: 'http://koleo.pl/ls?callback=?&q=' + term,
 		type: 'js',
 		dataType: 'jsonp',
 
@@ -89,7 +89,7 @@ function bindDatePicker() {
         weekStart: 1,
         minView: 1,
         startDate: new Date(year, month, day, hour),
-        endDate: new Date(2015, 11, 12, 23)
+        endDate: new Date(2016, 11, 12, 23)
     });
 }
 
