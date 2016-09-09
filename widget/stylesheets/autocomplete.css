@@ -40,6 +40,11 @@ div ul.autocomplete li.noResults {
   margin-left: 30px;
 }
 
+.prev img, .next img {
+  height: 12px;
+  margin-bottom: 0;
+}
+
 .datetimepicker.datetimepicker-dropdown.dropdown-menu{
   width: 210px;
 }

@@ -12,13 +12,16 @@ $(document).on('ready', function() {
 		var formattedDate = formatDate($('#date').val());
 		var date = new Date(formattedDate);
 
+		if (isNaN(date.valueOf())) {
+			date = new Date();
+		}
+
 		var day = ('0' + date.getDate()).slice(-2);
 		var month = ('0' + (date.getMonth() + 1)).slice(-2);
 		var year = date.getFullYear();
 		var hour = ('0' + date.getHours()).slice(-2);
-		var minutes = ('0' + date.getMinutes()).slice(-2);
 
-		var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':' + minutes;
+		var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':00';
 
 		window.location = 'http://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location; 
 	});
