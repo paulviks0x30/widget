@@ -99,5 +99,5 @@ function formatDate(foundationFormatDate) {
 	var year = foundationFormatDate.split(' ')[0].split('-').pop();
 	var hour = foundationFormatDate.split(' ').pop();
 
-	return month + '-' + day + '-' + year + ' ' + hour;
+	return year + '-' + month + '-' + day  + 'T' + hour;
 }
