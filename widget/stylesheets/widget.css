@@ -41,6 +41,10 @@ input[type="submit"] {
   border: none;
 }
 
+input[type="submit"]:hover {
+  cursor: pointer;
+}
+
 #start_station {
   background-image: url("../images/from.svg");
 }
