@@ -1,47 +1,51 @@
-$(document).on('ready', function() {
-	KoleoWidget.insertWidget();
-	KoleoWidget.addStyles();
-	KoleoWidget.bindDatePicker();
-	KoleoWidget.showLiveSearch();
-
-	$('#koleo-widget').on('submit', function(event) {
-		event.preventDefault();
-
-		var startStation = KoleoWidget.parameterize($('#start_station').val());
-		var endStation = KoleoWidget.parameterize($('#end_station').val());
-		var formattedDate = KoleoWidget.formatDate($('#date').val());
-		var date = new Date(formattedDate);
-
-		if (isNaN(date.valueOf())) {
-			date = new Date();
-		}
-
-		var day = ('0' + date.getDate()).slice(-2);
-		var month = ('0' + (date.getMonth() + 1)).slice(-2);
-		var year = date.getFullYear();
-		var hour = ('0' + date.getHours()).slice(-2);
-
-		var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':00';
-
-		window.location = 'http://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location; 
-	});
-});
-
-var SPECIAL_CHAR_REGEXP      = (/[_|\/|\s]+/g),
-    NON_ALPHA_NUMERIC_REGEXP = (/[^a-z0-9\-]+/gi),
-    MULTI_SEPARATOR_REGEXP   = (/[\-]+/g),
-    TRIM_SEPARATOR_REGEXP    = (/^-+|-+$/g),
-    TRIM_WHITESPACE_REGEXP   = (/^(\s|\u00A0)+|(\s|\u00A0)+$/g),
-    MULTI_WHITESPACE_REGEXP  = (/\s+/g),
-    POLISH_CHARS             = [/[ąĄ]/g, /[ćĆ]/g, /[ęĘ]/g, /[łŁ]/g, /[ńŃ]/g, /[óÓ]/g, /[śŚ]/g, /[żŻ]/g, /[źŹ]/g],
-    POLISH_CHAR_REPLACEMNETS = ['a', 'c', 'e', 'l', 'n', 'o', 's', 'z', 'z'],
-    SEPARATOR = '-', SPACE = ' ', EMPTY = '',
-    TYPE_UNDEFINED = 'undefined';
-
 var KoleoWidget = {
-	insertWidget: function() {
+	SPECIAL_CHAR_REGEXP: 	   (/[_|\/|\s]+/g),
+	NON_ALPHA_NUMERIC_REGEXP:  (/[^a-z0-9\-]+/gi),
+	MULTI_SEPARATOR_REGEXP:    (/[\-]+/g),
+	TRIM_SEPARATOR_REGEXP:     (/^-+|-+$/g),
+	TRIM_WHITESPACE_REGEXP:    (/^(\s|\u00A0)+|(\s|\u00A0)+$/g),
+	MULTI_WHITESPACE_REGEXP:   (/\s+/g),
+	POLISH_CHARS:              [/[ąĄ]/g, /[ćĆ]/g, /[ęĘ]/g, /[łŁ]/g, /[ńŃ]/g, /[óÓ]/g, /[śŚ]/g, /[żŻ]/g, /[źŹ]/g],
+	POLISH_CHAR_REPLACEMNETS:  ['a', 'c', 'e', 'l', 'n', 'o', 's', 'z', 'z'],
+	SEPARATOR:  			   '-', 
+	SPACE: 					   ' ', 
+	EMPTY: 					   '',
+	TYPE_UNDEFINED:  		   'undefined',
+
+	init: function(selector) {
+		var that = this;
+
+		this.insertWidget(selector);
+		this.addStyles();
+		this.bindDatePicker();
+		this.showLiveSearch();
+
+		$('#koleo-widget').on('submit', function(event) {
+			event.preventDefault();
+
+			var startStation = that.parameterize($('#start_station').val());
+			var endStation = that.parameterize($('#end_station').val());
+			var formattedDate = that.formatDate($('#date').val());
+			var date = new Date(formattedDate);
+
+			if (isNaN(date.valueOf())) {
+				date = new Date();
+			}
+
+			var day = ('0' + date.getDate()).slice(-2);
+			var month = ('0' + (date.getMonth() + 1)).slice(-2);
+			var year = date.getFullYear();
+			var hour = ('0' + date.getHours()).slice(-2);
+
+			var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':00';
+
+			window.location = 'http://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location; 
+		});
+	},
+
+	insertWidget: function(selector) {
 		var html = '<a href="https://koleo.pl"><img src="http://koleo.pl/assets/logo.png"></a><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="Z"><input id="end_station" name="end_station" type="text" placeholder="DO"><input id="date" name="date" type="text" placeholder="KIEDY"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
-		var container = $('.koleo-widget-container');
+		var container = $(selector);
 		container.append(html);
 	},
 
@@ -50,11 +54,13 @@ var KoleoWidget = {
 		var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/autocomplete.css" });
 		var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/awesomecomplete.css" });
 		var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/foundation-datetimepicker.css" });
+		var cssLink5 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://fonts.googleapis.com/css?family=Lato" });
 
 		cssLink.appendTo('head');
 		cssLink2.appendTo('head');
 		cssLink3.appendTo('head');
 		cssLink4.appendTo('head');
+		cssLink5.appendTo('head');
 	},
 
 	showLiveSearch: function() {
@@ -116,22 +122,22 @@ var KoleoWidget = {
 	},
 
 	parameterize: function(string, wordLimit) {
-	    for (var i = 0; i < POLISH_CHARS.length; i++) {
-	      	string = string.replace(POLISH_CHARS[i], POLISH_CHAR_REPLACEMNETS[i]);
+	    for (var i = 0; i < this.POLISH_CHARS.length; i++) {
+	      	string = string.replace(this.POLISH_CHARS[i], this.POLISH_CHAR_REPLACEMNETS[i]);
 	    }
 
 	    if(wordLimit && typeof wordLimit === 'number') {
-	      	string = string.replace(TRIM_WHITESPACE_REGEXP, EMPTY)
-	                     .replace(MULTI_WHITESPACE_REGEXP, SPACE)
-	                     .split(SPACE)
-	                     .join(SPACE);
+	      	string = string.replace(this.TRIM_WHITESPACE_REGEXP, this.EMPTY)
+	                     .replace(this.MULTI_WHITESPACE_REGEXP, this.SPACE)
+	                     .split(this.SPACE)
+	                     .join(this.SPACE);
 	    }
 
-	    return string.replace(SPECIAL_CHAR_REGEXP, SEPARATOR)    // replace underscores, slashes and spaces with separator
+	    return string.replace(this.SPECIAL_CHAR_REGEXP, this.SEPARATOR)    // replace underscores, slashes and spaces with separator
 	                 // .replace(NON_ALPHA_NUMERIC_REGEXP, EMPTY)   // remove non-alphanumeric characters except the separator
-	                 .replace(MULTI_SEPARATOR_REGEXP, SEPARATOR) // replace multiple occurring separators
-	                 .replace(TRIM_SEPARATOR_REGEXP, EMPTY)      // trim leading and trailing separators 
-	                 .replace('.', SEPARATOR)                    // replace dots with separator
+	                 .replace(this.MULTI_SEPARATOR_REGEXP, this.SEPARATOR) // replace multiple occurring separators
+	                 .replace(this.TRIM_SEPARATOR_REGEXP, this.EMPTY)      // trim leading and trailing separators 
+	                 .replace('.', this.SEPARATOR)                    // replace dots with separator
 	                 .toLowerCase();                             // convert to lowercase
 
 	}
