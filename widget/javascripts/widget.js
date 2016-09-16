@@ -34,10 +34,9 @@ var KoleoWidget = {
             var day = ('0' + date.getDate()).slice(-2);
             var month = ('0' + (date.getMonth() + 1)).slice(-2);
             var year = date.getFullYear();
-            var hour = ('0' + date.getHours()).slice(-2);
+            var hour = ('0' + date.getUTCHours()).slice(-2);
 
             var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':00';
-
             window.location = 'http://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location; 
         });
     },
@@ -98,10 +97,8 @@ var KoleoWidget = {
         var today = new Date();
         var year = today.getFullYear();
         var month = today.getMonth();
-        var fullMonth = ('0' + (month + 1)).slice(-2);
         var day = today.getDate();
         var hour = today.getHours();
-        var fullHour = ('0' + hour).slice(-2);
 
         var startDate = new Date(year, month, day - 1, hour);
         var initialDate = new Date(year, month, day, hour);
@@ -124,8 +121,7 @@ var KoleoWidget = {
         var month = foundationFormatDate.substr(3, 2);
         var year = foundationFormatDate.split(' ')[0].split('-').pop();
         var hour = foundationFormatDate.split(' ').pop();
-
-        return year + '-' + month + '-' + day  + 'T' + hour + ':00:00';
+        return year + '-' + month + '-' + day  + 'T' + hour + '+00:00';
     },
 
     parameterize: function(string, wordLimit) {
