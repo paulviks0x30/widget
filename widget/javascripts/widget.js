@@ -125,7 +125,7 @@ var KoleoWidget = {
         var year = foundationFormatDate.split(' ')[0].split('-').pop();
         var hour = foundationFormatDate.split(' ').pop();
 
-        return year + '-' + month + '-' + day  + 'T' + hour + '00:00';
+        return year + '-' + month + '-' + day  + 'T' + hour + ':00:00';
     },
 
     parameterize: function(string, wordLimit) {
