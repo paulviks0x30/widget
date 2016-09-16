@@ -42,7 +42,7 @@ var KoleoWidget = {
     },
 
     insertWidget: function(selector) {
-        var html = '<a href="https://koleo.pl"><img src="http://koleo.pl/assets/logo.png"></a><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="Z"><input id="end_station" name="end_station" type="text" placeholder="DO"><input id="date" name="date" type="text" placeholder="KIEDY"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
+        var html = '<a href="https://koleo.pl" title="KOLEO - rozkład jazdy i ceny biletów"><img src="http://koleo.pl/assets/logo.png" alt="KOLEO - rozkład jazdy i ceny biletów"></a><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="Z"><input id="end_station" name="end_station" type="text" placeholder="DO"><input id="date" name="date" type="text" placeholder="KIEDY"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
         var container = $(selector);
         container.append(html);
     },
