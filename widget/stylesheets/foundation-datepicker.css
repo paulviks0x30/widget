@@ -17,7 +17,7 @@
  *    Licensed under the Apache License v2.0
  *    http://www.apache.org/licenses/LICENSE-2.0
  */
- .datetimepicker.dropdown-menu {
+ .datepicker.dropdown-menu {
     position:absolute;
     top: 100%;
     left: 0;
@@ -45,11 +45,11 @@
     font-size: 13px;
     line-height: 18px }
 
-  .datetimepicker.dropdown-menu th, .datetimepicker.dropdown-menu td { 
+  .datepicker.dropdown-menu th, .datepicker.dropdown-menu td { 
     padding: 4px 5px
   }
 
-  .datetimepicker { 
+  .datepicker { 
     display: none;
     position: absolute;
     padding: 4px;
@@ -57,24 +57,24 @@
     direction: ltr
   }
 
-  .datetimepicker-inline {
+  .datepicker-inline {
     width: 220px;
     display: none }
 
-  .datetimepicker-rtl {
+  .datepicker-rtl {
     direction: rtl
   }
 
-  .datetimepicker-rtl table tr td span {
+  .datepicker-rtl table tr td span {
     float: right
   }
 
-  .datetimepicker-dropdown {
+  .datepicker-dropdown {
     top: 0;
     left: 0
   }
 
-  .datetimepicker-dropdown:before {
+  .datepicker-dropdown:before {
     content: '';
     display: inline-block;
     border-left: 7px solid transparent;
@@ -86,7 +86,7 @@
     left: 6px
     }
 
-  .datetimepicker-dropdown:after {
+  .datepicker-dropdown:after {
     content: '';
     display: inline-block;
     border-left: 6px solid transparent;
@@ -97,28 +97,28 @@
     left: 7px
     }
 
-  .datetimepicker>div {
+  .datepicker>div {
     display: none
   }
 
-  .datetimepicker.days div.datepicker-days {
+  .datepicker.days div.datepicker-days {
     display: block
   }
 
-  .datetimepicker.months div.datepicker-months {
+  .datepicker.months div.datepicker-months {
     display: block
   }
 
-  .datetimepicker.years div.datepicker-years {
+  .datepicker.years div.datepicker-years {
     display: block
   }
 
-  .datetimepicker table {
+  .datepicker table {
     border: 0; 
     margin: 0
   }
 
-  .datetimepicker td,.datetimepicker th {
+  .datepicker td,.datepicker th {
     text-align: center;
     width: 20px;
     height: 20px;
@@ -129,23 +129,23 @@
     cursor: pointer
   }
 
-  .datetimepicker td.active.day,.datetimepicker th.active.day {
+  .datepicker td.active.day,.datepicker th.active.day {
     background: #2ba6cb
   }
 
-  .datetimepicker td.active.year,.datetimepicker th.active.year {
+  .datepicker td.active.year,.datepicker th.active.year {
     background: #2ba6cb
   }
 
-  .datetimepicker td span.active,.datetimepicker th span.active {
+  .datepicker td span.active,.datepicker th span.active {
     background: #2ba6cb
   }
 
-  .table-striped .datetimepicker table tr td,.table-striped .datetimepicker table tr th {
+  .table-striped .datepicker table tr td,.table-striped .datepicker table tr th {
     background-color: transparent
   }
 
-  .datetimepicker table tr td span {
+  .datepicker table tr td span {
     display: block;
     width: 23%;
     height: 54px;
@@ -155,31 +155,31 @@
     cursor: pointer 
     }
 
-    .datetimepicker th.switch {
+    .datepicker th.switch {
       width: 145px
     }
 
-    .datetimepicker thead tr:first-child th,.datetimepicker tfoot tr:first-child th {
+    .datepicker thead tr:first-child th,.datepicker tfoot tr:first-child th {
       cursor: pointer
     }
 
-    .datetimepicker .cw {
+    .datepicker .cw {
       font-size: 10px;
       width: 12px;
       padding: 0 2px 0 5px;
       vertical-align:middle
     }
 
-    .datetimepicker thead tr:first-child th.cw {
+    .datepicker thead tr:first-child th.cw {
       cursor: default;
       background-color: transparent
     }
 
-    .datetimepicker-dropdown::before,.datetimepicker-dropdown::after {
+    .datepicker-dropdown::before,.datepicker-dropdown::after {
       display: none
     }
 
-    .datetimepicker-close {
+    .datepicker-close {
       position: absolute;
       top: -30px;
       right: 0;

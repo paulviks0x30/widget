@@ -45,11 +45,11 @@ div ul.autocomplete li.noResults {
   margin-bottom: 0;
 }
 
-.datetimepicker.datetimepicker-dropdown.dropdown-menu{
+.datepicker.datepicker-dropdown.dropdown-menu{
   width: 210px;
 }
 
-.datetimepicker.datetimepicker-dropdown.dropdown-menu {
+.datepicker.datepicker-dropdown.dropdown-menu {
   height: 230px;
   border-radius: 0;
   border-color: #d8d8d8;
@@ -57,26 +57,26 @@ div ul.autocomplete li.noResults {
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 
-.datetimepicker.datetimepicker-dropdown.dropdown-menu .table-condensed {
+.datepicker.datepicker-dropdown.dropdown-menu .table-condensed {
   position: absolute;
   top: 0;
   left: 2;
 }
 
-.datetimepicker.datetimepicker-dropdown.dropdown-menu thead tr:first-child th, .datetimepicker.datetimepicker-dropdown.dropdown-menu .datetimepicker tfoot tr:first-child th, .datetimepicker.datetimepicker-dropdown.dropdown-menu td:not(.disabled), th {
+.datepicker.datepicker-dropdown.dropdown-menu thead tr:first-child th, .datepicker.datepicker-dropdown.dropdown-menu .datepicker tfoot tr:first-child th, .datepicker.datepicker-dropdown.dropdown-menu td:not(.disabled), th {
   color: #293373;
 }
 
-.datetimepicker.datetimepicker-dropdown.dropdown-menu td.disabled, .datetimepicker.datetimepicker-dropdown.dropdown-menu td.new, .datetimepicker.datetimepicker-dropdown.dropdown-menu td span.disabled, .datetimepicker.datetimepicker-dropdown.dropdown-menu td span.new {
+.datepicker.datepicker-dropdown.dropdown-menu td.disabled, .datepicker.datepicker-dropdown.dropdown-menu td.new, .datepicker.datepicker-dropdown.dropdown-menu td span.disabled, .datepicker.datepicker-dropdown.dropdown-menu td span.new {
   color: #d8d8d8;
 }    
 
-.datetimepicker.datetimepicker-dropdown.dropdown-menu .datetimepicker-hours table tr td span {
+.datepicker.datepicker-dropdown.dropdown-menu .datepicker-hours table tr td span {
   height: 26px;
   line-height: 25px;
 }
 
-.datetimepicker.datetimepicker-dropdown.dropdown-menu td:not(.disabled).active, .datetimepicker.datetimepicker-dropdown.dropdown-menu td:not(.disabled) span.active {
+.datepicker.datepicker-dropdown.dropdown-menu td:not(.disabled).active, .datepicker.datepicker-dropdown.dropdown-menu td:not(.disabled) span.active {
   background-color: #293373;
   color: white;
 }

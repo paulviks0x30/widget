@@ -52,7 +52,7 @@ var KoleoWidget = {
         var cssLink = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/widget.css" });
         var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/autocomplete.css" });
         var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/awesomecomplete.css" });
-        var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/foundation-datetimepicker.css" });
+        var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "widget/stylesheets/foundation-datepicker.css" });
         var cssLink5 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://fonts.googleapis.com/css?family=Lato" });
 
         cssLink.appendTo('head');
@@ -98,14 +98,18 @@ var KoleoWidget = {
         var today = new Date();
         var year = today.getFullYear();
         var month = today.getMonth();
+        var fullMonth = ('0' + (month + 1)).slice(-2);
         var day = today.getDate();
-        var hour = today.getHours() + 1;
+        var hour = today.getHours();
+        var fullHour = ('0' + hour).slice(-2);
 
-        var startDate = new Date(year, month, day, hour);
+        var startDate = new Date(year, month, day - 1, hour);
+        var initialDate = new Date(year, month, day, hour);
         var endDate = new Date(startDate);
         endDate.setDate(endDate.getDate() + 90);
         
-        dateInput.fdatetimepicker({
+        dateInput.fdatepicker({
+            initialDate: initialDate,
             format: 'dd-mm-yyyy hh:ii',
             language: 'pl',
             weekStart: 1,
