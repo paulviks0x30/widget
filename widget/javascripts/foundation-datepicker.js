@@ -352,7 +352,7 @@
             }).first().css('z-index')) + 10;
             var textbox = this.component ? this.component : this.element;
             var offset = textbox.offset();
-            var height = textbox.outerHeight() + parseInt(textbox.css('margin-top'));
+            var height = textbox.outerHeight() + parseInt(textbox.css('margin-bottom'));
             var width = textbox.outerWidth() + parseInt(textbox.css('margin-left'));
             var fullOffsetTop = offset.top + height;
             var offsetLeft = offset.left;
