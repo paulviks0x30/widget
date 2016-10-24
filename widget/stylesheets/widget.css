@@ -7,7 +7,14 @@
 }
 
 .koleo-widget-container img {
+  margin-left: 10px;
+}
+
+.koleo-widget-container a {
+  color: white;
   margin-bottom: 20px;
+  display: block;
+  text-decoration: none;
 }
 
 .koleo-widget-container input {
