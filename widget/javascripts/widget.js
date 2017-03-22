@@ -37,12 +37,12 @@ var KoleoWidget = {
             var hour = ('0' + date.getUTCHours()).slice(-2);
 
             var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':00';
-            window.location = 'http://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location; 
+            window.location = 'https://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location;
         });
     },
 
     insertWidget: function(selector) {
-        var html = '<a href="https://koleo.pl" title="KOLEO - rozkład jazdy i ceny biletów">Rozkład jazdy dostarcza <img src="http://koleo.pl/assets/logo.png"></a><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="Z"><input id="end_station" name="end_station" type="text" placeholder="DO"><input id="date" name="date" type="text" placeholder="KIEDY"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
+        var html = '<a href="https://koleo.pl" title="KOLEO - rozkład jazdy i ceny biletów">Rozkład jazdy dostarcza <img src="https://koleo.pl/assets/logo.png"></a><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="Z"><input id="end_station" name="end_station" type="text" placeholder="DO"><input id="date" name="date" type="text" placeholder="KIEDY"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
         var container = $(selector);
         container.append(html);
     },
@@ -78,7 +78,7 @@ var KoleoWidget = {
 
     getData: function(term, $awesomecomplete, onData) {
         $.ajax({
-            url: 'http://koleo.pl/ls?callback=?&q=' + term,
+            url: 'https://koleo.pl/ls?callback=?&q=' + term,
             type: 'js',
             dataType: 'jsonp',
 
