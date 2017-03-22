@@ -1,12 +1,17 @@
-<body>
-  <div class="koleo-widget-container"></div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script>
-    window.onload = function() {
-      var script = document.createElement('script');
-      document.body.appendChild(script);
-      script.src = "//widget.koleo.pl/widget/javascripts/load-widget.js";
-      script.onload = function(s) { KoleoWidgetLoader.loadWidget($('.koleo-widget-container')) };
-    }
-  </script>
-</body>
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head></head>
+  <body>
+    <div class="koleo-widget-container"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      window.onload = function() {
+        var script = document.createElement('script');
+        document.body.appendChild(script);
+        script.src = "//widget.koleo.pl/widget/javascripts/load-widget.js";
+        script.onload = function(s) { KoleoWidgetLoader.loadWidget($('.koleo-widget-container')) };
+      }
+    </script>
+  </body>
+</html>
