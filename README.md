@@ -14,12 +14,12 @@ Wersja uproszczona: umieść poniższy fragment w wybranym miejscu w pliku HTML.
 
 Alternatywnie: Umieść następujący skrypt uzupełniając argument `selektor` odpowiednią wartością, wskazującą na istniejący element HTML.
 ```
-  var el = document.createElement('script');
-  document.head.appendChild(el);
-  el.src = 'https://widget.koleo.pl/widget/javascripts/load-widget.js';
-  el.onload = function(script){
-      KoleoWidgetLoader.loadWidget(`selektor`);
-  };
+var el = document.createElement('script');
+document.head.appendChild(el);
+el.src = 'https://widget.koleo.pl/widget/javascripts/load-widget.js';
+el.onload = function(script){
+    KoleoWidgetLoader.loadWidget(selektor);
+};
 ```
 
 [Przykładowe użycie](https://widget.koleo.pl/example_embed.html)
