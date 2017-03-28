@@ -37,7 +37,7 @@ var KoleoWidget = {
             var hour = ('0' + date.getUTCHours()).slice(-2);
 
             var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':00';
-            window.location = 'https://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?location=' + window.location;
+            window.location = 'https://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?utm_medium=widget&utm_source=' + window.location.hostname;
         });
     },
 
