@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="koleo-widget-container"></div>
+    <script>
+      var el = document.createElement('script');
+      document.head.appendChild(el);
+      el.src = 'https://widget.koleo.pl/widget/javascripts/load-widget.js';
+      el.onload = function(script){
+          KoleoWidgetLoader.loadWidget(document.getElementsByClassName('koleo-widget-container')[0]);
+      };
+    </script>
+  </body>
+</html>
