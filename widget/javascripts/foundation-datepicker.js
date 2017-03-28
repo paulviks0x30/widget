@@ -1309,9 +1309,9 @@
         },
         headTemplate: '<thead>' +
             '<tr>'+
-                '<th class="prev"><img src="widget/images/arrow_left.svg"/></th>'+
+                '<th class="prev"><img src="https://widget.koleo.pl/widget/images/arrow_left.svg"/></th>'+
                 '<th colspan="5" class="switch"></th>'+
-                '<th class="next"><img src="widget/images/arrow_right.svg"/></th>'+
+                '<th class="next"><img src="https://widget.koleo.pl/widget/images/arrow_right.svg"/></th>'+
             '</tr>'+
             '</thead>',
         contTemplate: '<tbody><tr><td colspan="7"></td></tr></tbody>',
