@@ -1,7 +1,8 @@
 .koleo-widget-container {
-	background: #293373;
-  padding: 20px;
-  width: 260px;
+  box-sizing: border-box;
+  background: #293373;
+  padding: 20px 0;
+  width: 100%;
   color: #293373;
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
@@ -12,15 +13,21 @@
 
 .koleo-widget-container a {
   color: white;
-  margin-bottom: 20px;
+  margin: 0 20px 20px;
   display: block;
   text-decoration: none;
 }
 
+.koleo-widget-container form {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .koleo-widget-container input {
+  flex: 1 0 auto;
   display: block;
   width: 260px;
-  margin-top: 5px;
+  margin: 5px 20px 0;
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 
