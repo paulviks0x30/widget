@@ -54,7 +54,7 @@ var KoleoWidget = {
     },
 
     addStyles: function() {
-        var cssLink = $("<link>", { rel: "stylesheet", type: "text/css", href: "file:///Users/paramaciej/koleo/widget/widget/stylesheets/widget.css" });
+        var cssLink = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/widget/stylesheets/widget.css" });
         var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/widget/stylesheets/autocomplete.css" });
         var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/widget/stylesheets/awesomecomplete.css" });
         var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/widget/stylesheets/foundation-datepicker.css" });
