@@ -44,7 +44,13 @@ var KoleoWidget = {
     insertWidget: function(selector) {
         var html = '<a href="https://koleo.pl?utm_medium=widget&utm_source=' + window.location.hostname + '" title="KOLEO - rozkład jazdy i ceny biletów">Rozkład jazdy dostarcza <img src="https://koleo.pl/assets/logo.png"></a><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="Z" autocomplete="off"><input id="end_station" name="end_station" type="text" placeholder="DO" autocomplete="off"><input id="date" name="date" type="text" placeholder="KIEDY" autocomplete="off"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
         var container = $(selector);
+        var that = this;
         container.append(html);
+
+        that.resizeContainer(container);
+        $(window).resize(function() {
+            that.resizeContainer(container);
+        });
     },
 
     addStyles: function() {
@@ -142,5 +148,12 @@ var KoleoWidget = {
                      .replace('.', this.SEPARATOR)                    // replace dots with separator
                      .toLowerCase();                             // convert to lowercase
 
+    },
+
+    resizeContainer: function(container) {
+        if (container.width() > 1024)
+            container.addClass('koleo-wide-widget');
+        else
+            container.removeClass('koleo-wide-widget');
     }
-}
+};

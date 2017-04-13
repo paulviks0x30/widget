@@ -1,7 +1,8 @@
 .koleo-widget-container {
-	background: #293373;
-  padding: 20px;
-  width: 260px;
+  box-sizing: border-box;
+  background: #293373;
+  padding: 20px 0;
+  width: 100%;
   color: #293373;
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
@@ -12,16 +13,27 @@
 
 .koleo-widget-container a {
   color: white;
-  margin-bottom: 20px;
+  margin: 0 20px 20px;
   display: block;
   text-decoration: none;
 }
 
+.koleo-widget-container form {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 10px;
+}
+
 .koleo-widget-container input {
+  flex: 1 1 auto;
   display: block;
-  width: 260px;
-  margin-top: 5px;
+  width: 100%;
+  margin: 5px 10px 0;
   font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+.koleo-widget-container.koleo-wide-widget input {
+  width: 200px;
 }
 
 .koleo-widget-container input[type="text"] {
@@ -66,7 +78,7 @@
 
 .koleo-widget-container #start_station, .koleo-widget-container #end_station, .koleo-widget-container #date, .koleo-widget-container #submit {
   background-repeat: no-repeat;
-  background-position: 5% 50%;
+  background-position: 10px 50%;
   background-size: 15px;
 }
 
