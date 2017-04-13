@@ -16,8 +16,10 @@ var KoleoWidget = {
 
         this.insertWidget(selector);
         this.addStyles();
-        this.bindDatePicker();
-        this.showLiveSearch();
+        window.setTimeout(function() {
+            that.bindDatePicker();
+            that.showLiveSearch();
+        }, 50);
 
         $('#koleo-widget').on('submit', function(event) {
             event.preventDefault();
@@ -42,7 +44,7 @@ var KoleoWidget = {
     },
 
     insertWidget: function(selector) {
-        var html = '<a href="https://koleo.pl?utm_medium=widget&utm_source=' + window.location.hostname + '" title="KOLEO - rozkład jazdy i ceny biletów">Rozkład jazdy dostarcza <img src="https://koleo.pl/assets/logo.png"></a><form id="koleo-widget"><input id="start_station" name="start_station" type="text" placeholder="Z" autocomplete="off"><input id="end_station" name="end_station" type="text" placeholder="DO" autocomplete="off"><input id="date" name="date" type="text" placeholder="KIEDY" autocomplete="off"><input id="submit" type="submit" value="Znajdź połączenie"></form>'
+        var html = '<a href="https://koleo.pl?utm_medium=widget&utm_source=' + window.location.hostname + '" title="KOLEO - rozkład jazdy i ceny biletów">Rozkład jazdy dostarcza <img src="https://koleo.pl/assets/logo.png"></a><form id="koleo-widget"><div class="flex-item"><input id="start_station" name="start_station" type="text" placeholder="Z" autocomplete="off"></div><div class="flex-item"><input id="end_station" name="end_station" type="text" placeholder="DO" autocomplete="off"></div><div class="flex-item"><input id="date" name="date" type="text" placeholder="KIEDY" autocomplete="off"></div><div class="flex-item"><input id="submit" type="submit" value="Znajdź połączenie"></div></form>'
         var container = $(selector);
         var that = this;
         container.append(html);

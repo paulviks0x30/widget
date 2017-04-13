@@ -24,15 +24,19 @@
   margin: 0 10px;
 }
 
-.koleo-widget-container input {
+.koleo-widget-container div.flex-item {
   flex: 1 1 auto;
   display: block;
   width: 100%;
   margin: 5px 10px 0;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 
-.koleo-widget-container.koleo-wide-widget input {
+.koleo-widget-container input {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+.koleo-widget-container.koleo-wide-widget div.flex-item {
   width: 200px;
 }
 
