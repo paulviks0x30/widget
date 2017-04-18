@@ -153,7 +153,7 @@ var KoleoWidget = {
     },
 
     resizeContainer: function(container) {
-        if (container.width() > 1024)
+        if (container.width() > 800)
             container.addClass('koleo-wide-widget');
         else
             container.removeClass('koleo-wide-widget');
