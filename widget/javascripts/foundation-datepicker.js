@@ -351,6 +351,13 @@
                 return $(this).css('z-index') != 'auto';
             }).first().css('z-index')) + 10;
             var textbox = this.component ? this.component : this.element;
+
+            if($(document).height() > $(window).height()) {
+                this.picker.css({
+                    top: 0
+                });
+            }
+
             var offset = textbox.offset();
             var height = textbox.outerHeight() + parseInt(textbox.css('margin-bottom'));
             var width = textbox.outerWidth() + parseInt(textbox.css('margin-left'));

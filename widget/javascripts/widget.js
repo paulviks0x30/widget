@@ -16,10 +16,8 @@ var KoleoWidget = {
 
         this.insertWidget(selector);
         this.addStyles();
-        window.setTimeout(function() {
-            that.bindDatePicker();
-            that.showLiveSearch();
-        }, 50);
+        this.bindDatePicker();
+        this.showLiveSearch();
 
         $('#koleo-widget').on('submit', function(event) {
             event.preventDefault();
@@ -112,7 +110,7 @@ var KoleoWidget = {
         var initialDate = new Date(year, month, day, hour);
         var endDate = new Date(startDate);
         endDate.setDate(endDate.getDate() + 90);
-        
+
         dateInput.fdatepicker({
             initialDate: initialDate,
             format: 'dd-mm-yyyy hh:ii',
