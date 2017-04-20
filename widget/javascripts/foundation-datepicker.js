@@ -106,7 +106,7 @@
         if (this.isInline) {
             this.picker.addClass('datepicker-inline');
         } else {
-            this.picker.addClass('datepicker-dropdown dropdown-menu');
+            this.picker.addClass('datepicker-dropdown koleo-widget-dropdown-menu');
         }
         if (this.isRTL) {
             this.picker.addClass('datepicker-rtl');
