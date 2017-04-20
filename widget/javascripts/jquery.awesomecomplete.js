@@ -22,6 +22,7 @@
             $this.data('awesomecomplete-config', config);
 
             var $attachTo = $(config.attachTo || $this);
+            $this.data('awesomecomplete-attachTo', $attachTo);
             var $list = $('<ul/>').addClass(config.suggestionListClass)
                                   .insertAfter($attachTo)
                                   .hide()
@@ -305,8 +306,10 @@
         if ((config.noResultsMessage !== undefined) && (results.length == 0))
             $list.append($('<li class="' + config.noResultsClass + '">' + config.noResultsMessage + '</li>'));
 
-        if ((results.length > 0) || (config.noResultsMessage !== undefined))
+        if ((results.length > 0) || (config.noResultsMessage !== undefined)) {
+            $list.css('width', $this.data('awesomecomplete-attachTo').outerWidth());
             $list.show();
+        }
     };
 
 // default functions

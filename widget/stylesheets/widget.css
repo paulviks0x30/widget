@@ -24,6 +24,10 @@
   margin: 0 10px;
 }
 
+.koleo-widget-container.koleo-wide-widget form {
+  flex-flow: row nowrap;
+}
+
 .koleo-widget-container div.flex-item {
   flex: 1 1 auto;
   display: block;
@@ -34,10 +38,6 @@
 .koleo-widget-container input {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   width: 100%;
-}
-
-.koleo-widget-container.koleo-wide-widget div.flex-item {
-  width: 200px;
 }
 
 .koleo-widget-container input[type="text"] {
