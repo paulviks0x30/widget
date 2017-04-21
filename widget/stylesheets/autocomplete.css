@@ -46,11 +46,11 @@ div ul.autocomplete li.noResults {
   margin-bottom: 0;
 }
 
-.datepicker.datepicker-dropdown.dropdown-menu{
+.datepicker.datepicker-dropdown.koleo-widget-dropdown-menu{
   width: 210px;
 }
 
-.datepicker.datepicker-dropdown.dropdown-menu {
+.datepicker.datepicker-dropdown.koleo-widget-dropdown-menu {
   height: 230px;
   border-radius: 0;
   border-color: #d8d8d8;
@@ -58,26 +58,26 @@ div ul.autocomplete li.noResults {
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 
-.datepicker.datepicker-dropdown.dropdown-menu .table-condensed {
+.datepicker.datepicker-dropdown.koleo-widget-dropdown-menu .table-condensed {
   position: absolute;
   top: 0;
   left: 2;
 }
 
-.datepicker.datepicker-dropdown.dropdown-menu thead tr:first-child th, .datepicker.datepicker-dropdown.dropdown-menu .datepicker tfoot tr:first-child th, .datepicker.datepicker-dropdown.dropdown-menu td:not(.disabled), th {
+.datepicker.datepicker-dropdown.koleo-widget-dropdown-menu thead tr:first-child th, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu .datepicker tfoot tr:first-child th, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td:not(.disabled), th {
   color: #293373;
 }
 
-.datepicker.datepicker-dropdown.dropdown-menu td.disabled, .datepicker.datepicker-dropdown.dropdown-menu td.new, .datepicker.datepicker-dropdown.dropdown-menu td span.disabled, .datepicker.datepicker-dropdown.dropdown-menu td span.new {
+.datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td.disabled, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td.new, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td span.disabled, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td span.new {
   color: #d8d8d8;
 }    
 
-.datepicker.datepicker-dropdown.dropdown-menu .datepicker-hours table tr td span {
+.datepicker.datepicker-dropdown.koleo-widget-dropdown-menu .datepicker-hours table tr td span {
   height: 26px;
   line-height: 25px;
 }
 
-.datepicker.datepicker-dropdown.dropdown-menu td:not(.disabled).active, .datepicker.datepicker-dropdown.dropdown-menu td:not(.disabled) span.active {
+.datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td:not(.disabled).active, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td:not(.disabled) span.active {
   background-color: #293373;
   color: white;
 }

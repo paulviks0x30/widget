@@ -5,10 +5,12 @@
   width: 100%;
   color: #293373;
   font-family: "Lato", Helvetica, Arial, sans-serif;
+  text-align: left;
 }
 
 .koleo-widget-container img {
   margin-left: 10px;
+  vertical-align: baseline;
 }
 
 .koleo-widget-container a {
@@ -39,6 +41,7 @@
   font-family: "Lato", Helvetica, Arial, sans-serif;
   width: 100%;
   box-sizing: border-box;
+  margin: 0;
 }
 
 .koleo-widget-container .flex-item input[type="text"] {
@@ -47,6 +50,7 @@
   font-size: 0.8125rem;
   text-transform: uppercase;
   color: #293373;
+  margin: 0;
 }
 
 .koleo-widget-container .flex-item input[type="text"], .koleo-widget-container .flex-item input[type="text"]:focus, .koleo-widget-container .flex-item input[type="submit"] {
@@ -64,6 +68,7 @@
   font-size: 12px;
   border: none;
   width: 100%;
+  margin: 0;
 }
 
 .koleo-widget-container .flex-item input[type="submit"]:hover {

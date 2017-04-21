@@ -17,7 +17,7 @@
  *    Licensed under the Apache License v2.0
  *    http://www.apache.org/licenses/LICENSE-2.0
  */
- .datepicker.dropdown-menu {
+ .datepicker.koleo-widget-dropdown-menu {
     position:absolute;
     top: 100%;
     left: 0;
@@ -45,7 +45,7 @@
     font-size: 13px;
     line-height: 18px }
 
-  .datepicker.dropdown-menu th, .datepicker.dropdown-menu td { 
+  .datepicker.koleo-widget-dropdown-menu th, .datepicker.koleo-widget-dropdown-menu td {
     padding: 4px 5px
   }
 
