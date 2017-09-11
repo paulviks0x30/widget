@@ -1,0 +1,29 @@
+.koleo-widget-container .flex-item input[type="text"] {
+  padding-left: 40px !important; 
+}
+.koleo-widget-container #submit { 
+  color: white !important; 
+}
+.koleo-widget-container .title li {
+  height: 46px;
+}
+.koleo-widget-container a {
+  color: white !important; 
+};
+
+.koleo-widget-container a:hover {
+  color: #5EC6C5 !important; 
+}
+.koleo-widget-container .title {
+  font-size: 12.8px!important;
+  font-weight: normal !important;
+
+  margin-left: 30px !important;
+  padding: 5px !important;
+  color: #293373;
+  text-transform: uppercase;
+
+}
+.koleo-widget-container .active .title {
+  color: white;
+}

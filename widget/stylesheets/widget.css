@@ -5,10 +5,12 @@
   width: 100%;
   color: #293373;
   font-family: "Lato", Helvetica, Arial, sans-serif;
+  text-align: left;
 }
 
 .koleo-widget-container img {
   margin-left: 10px;
+  vertical-align: baseline;
 }
 
 .koleo-widget-container a {
@@ -35,26 +37,29 @@
   margin: 5px 10px 0;
 }
 
-.koleo-widget-container input {
+.koleo-widget-container .flex-item input {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   width: 100%;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.koleo-widget-container input[type="text"] {
+.koleo-widget-container .flex-item input[type="text"] {
   height: 46px;
   padding-left: 40px;
   font-size: 0.8125rem;
   text-transform: uppercase;
   color: #293373;
+  margin: 0;
 }
 
-.koleo-widget-container input[type="text"], .koleo-widget-container input[type="text"]:focus, .koleo-widget-container input[type="submit"] {
+.koleo-widget-container .flex-item input[type="text"], .koleo-widget-container .flex-item input[type="text"]:focus, .koleo-widget-container .flex-item input[type="submit"] {
 	box-shadow: none;
 	background-repeat: no-repeat;
 	text-transform: uppercase;
 }
 
-.koleo-widget-container input[type="submit"] {
+.koleo-widget-container .flex-item input[type="submit"] {
   height: 46px;
   background-image: url("../images/looking_glass.svg");
   background-color: #5ec6c5;
@@ -62,9 +67,11 @@
   letter-spacing: 1.25px;
   font-size: 12px;
   border: none;
+  width: 100%;
+  margin: 0;
 }
 
-.koleo-widget-container input[type="submit"]:hover {
+.koleo-widget-container .flex-item input[type="submit"]:hover {
   cursor: pointer;
 }
 
