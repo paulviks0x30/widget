@@ -16,7 +16,7 @@ KoleoWidgetLoader = {
             if (scripts.length) {
                 that.loadScripts(scripts, selector);
             } else {
-                KoleoWidget.init(selector);
+                KoleoWidget.initAll(selector);
             }
         };
         el.src = script;

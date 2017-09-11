@@ -68,19 +68,19 @@
   cursor: pointer;
 }
 
-.koleo-widget-container #start_station {
+.koleo-widget-container .start_station {
   background-image: url("../images/from.svg");
 }
 
-.koleo-widget-container #end_station {
+.koleo-widget-container .end_station {
   background-image: url("../images/to.svg");
 }
 
-.koleo-widget-container #date {
+.koleo-widget-container .date {
   background-image: url("../images/date.svg");
 }
 
-.koleo-widget-container #start_station, .koleo-widget-container #end_station, .koleo-widget-container #date, .koleo-widget-container #submit {
+.koleo-widget-container .start_station, .koleo-widget-container .end_station, .koleo-widget-container .date, .koleo-widget-container .submit {
   background-repeat: no-repeat;
   background-position: 10px 50%;
   background-size: 15px;

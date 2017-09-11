@@ -7,7 +7,7 @@ Widget KOLEO, to prosty sposób, by dodać [wyszukiwarkę rozkładu jazdy z cena
 # Aby umieścić widget na stronie
 Wersja uproszczona: umieść poniższy fragment w wybranym miejscu w pliku HTML.
 ```
-<div id="koleo-widget-container" class="koleo-widget-container"></div>
+<div class="koleo-widget-container"></div>
 <script src="https://widget.koleo.pl/widget/javascripts/load-widget-simple.js"></script>
 ```
 [Przykładowe użycie](https://widget.koleo.pl/example_embed_simple.html)

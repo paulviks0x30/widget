@@ -11,20 +11,30 @@ var KoleoWidget = {
     EMPTY:                     '',
     TYPE_UNDEFINED:            'undefined',
 
+    initAll: function(selector) {
+        var that = this;
+        $(selector).each(function() {
+            if (!$(this).data('already-added')) {
+                $(this).data('already-added', true);
+                that.init($(this));
+            }
+        })
+    },
+
     init: function(selector) {
         var that = this;
 
         this.insertWidget(selector);
         this.addStyles();
-        this.bindDatePicker();
-        this.showLiveSearch();
+        this.bindDatePicker(selector);
+        this.showLiveSearch(selector);
 
-        $('#koleo-widget').on('submit', function(event) {
+        $(selector).find('form.koleo-widget').on('submit', function(event) {
             event.preventDefault();
 
-            var startStation = that.parameterize($('#start_station').val());
-            var endStation = that.parameterize($('#end_station').val());
-            var formattedDate = that.formatDate($('#date').val());
+            var startStation = that.parameterize($(selector).find('.start_station').val());
+            var endStation = that.parameterize($(selector).find('.end_station').val());
+            var formattedDate = that.formatDate($(selector).find('.date').val());
             var date = new Date(formattedDate);
 
             if (isNaN(date.valueOf())) {
@@ -42,7 +52,7 @@ var KoleoWidget = {
     },
 
     insertWidget: function(selector) {
-        var html = '<a href="https://koleo.pl?utm_medium=widget&utm_source=' + window.location.hostname + '" title="KOLEO - rozkład jazdy i ceny biletów">Rozkład jazdy dostarcza <img src="https://koleo.pl/assets/logo.png"></a><form id="koleo-widget"><div class="flex-item"><input id="start_station" name="start_station" type="text" placeholder="Z" autocomplete="off"></div><div class="flex-item"><input id="end_station" name="end_station" type="text" placeholder="DO" autocomplete="off"></div><div class="flex-item"><input id="date" name="date" type="text" placeholder="KIEDY" autocomplete="off"></div><div class="flex-item"><input id="submit" type="submit" value="Znajdź połączenie"></div></form>'
+        var html = '<a href="https://koleo.pl?utm_medium=widget&utm_source=' + window.location.hostname + '" title="KOLEO - rozkład jazdy i ceny biletów">Rozkład jazdy dostarcza <img src="https://koleo.pl/assets/logo.png"></a><form class="koleo-widget"><div class="flex-item"><input class="start_station" name="start_station" type="text" placeholder="Z" autocomplete="off"></div><div class="flex-item"><input class="end_station" name="end_station" type="text" placeholder="DO" autocomplete="off"></div><div class="flex-item"><input class="date" name="date" type="text" placeholder="KIEDY" autocomplete="off"></div><div class="flex-item"><input class="submit" type="submit" value="Znajdź połączenie"></div></form>'
         var container = $(selector);
         var that = this;
         container.append(html);
@@ -67,8 +77,8 @@ var KoleoWidget = {
         cssLink5.appendTo('head');
     },
 
-    showLiveSearch: function() {
-        $('#start_station, #end_station').awesomecomplete({
+    showLiveSearch: function(selector) {
+        $(selector).find('.start_station, .end_station').awesomecomplete({
             noResultsMessage: 'Nie ma takiej stacji.',
             dataMethod: this.getData,
             valueFunction: function(dataItem) {
@@ -98,8 +108,8 @@ var KoleoWidget = {
         });
     },
 
-    bindDatePicker: function() {
-        var dateInput = $('#date');
+    bindDatePicker: function(selector) {
+        var dateInput = $(selector).find('.date');
         var today = new Date();
         var year = today.getFullYear();
         var month = today.getMonth();
