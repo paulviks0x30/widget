@@ -94,9 +94,12 @@ var KoleoWidget = {
 
     getData: function(term, $awesomecomplete, onData) {
         $.ajax({
-            url: 'https://koleo.pl/ls?callback=?&q=' + term,
+            url: 'https://koleo.pl/ls.js?callback=?',
             type: 'js',
             dataType: 'jsonp',
+            data: {
+                q: term
+            },
 
             success: function(data) {
                onData(data.stations);
