@@ -47,7 +47,18 @@ var KoleoWidget = {
             var hour = ('0' + date.getUTCHours()).slice(-2);
 
             var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':00';
-            window.location = 'https://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '?utm_medium=widget&utm_source=' + window.location.hostname;
+
+            var selectedCarriers = '';
+            var brands = $(selector).data('brands');
+            if (brands) {
+                selectedCarriers = 'all/ARRIVARP-EIC-EIP-IC-IR-REG-KM-KML-KS-KW-LKA-LS-MR-RE-SKMT-SKM-TLK-WKD-KD--'
+                $.each(brands.split("-"), function(_, brand){
+                   selectedCarriers = selectedCarriers.replace("-" + brand + "-","-") + brand + "-";
+                });
+            } else {
+                selectedCarriers = 'all/all';
+            }
+            window.location = 'https://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '/'+ selectedCarriers + '?utm_medium=widget&utm_source=' + window.location.hostname;
         });
     },
 
