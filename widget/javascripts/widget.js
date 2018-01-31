@@ -48,16 +48,8 @@ var KoleoWidget = {
 
             var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':00';
 
-            var selectedCarriers = '';
             var brands = $(selector).data('brands');
-            if (brands) {
-                selectedCarriers = 'all/ARRIVARP-EIC-EIP-IC-IR-REG-KM-KML-KS-KW-LKA-LS-MR-RE-SKMT-SKM-TLK-WKD-KD--'
-                $.each(brands.split("-"), function(_, brand){
-                   selectedCarriers = selectedCarriers.replace("-" + brand + "-","-") + brand + "-";
-                });
-            } else {
-                selectedCarriers = 'all/all';
-            }
+            var selectedCarriers = 'all/' + (brands ? brands + '--' + brands : 'all');
             window.location = 'https://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '/'+ selectedCarriers + '?utm_medium=widget&utm_source=' + window.location.hostname;
         });
     },
