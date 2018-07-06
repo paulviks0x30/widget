@@ -1,6 +1,6 @@
 .koleo-widget-container {
   box-sizing: border-box;
-  background: #293373;
+  background: #1e0f64;
   padding: 20px 0;
   width: 100%;
   color: #293373;
@@ -62,7 +62,7 @@
 .koleo-widget-container .flex-item input[type="submit"] {
   height: 46px;
   background-image: url("../images/looking_glass.svg");
-  background-color: #5ec6c5;
+  background-color: #e1266b;
   color: white;
   letter-spacing: 1.25px;
   font-size: 12px;
