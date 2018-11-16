@@ -8,7 +8,6 @@ div ul.autocomplete {
 
 div ul.autocomplete li {
   border-top: solid 1px #d8d8d8;
-  text-transform: uppercase;
 }
 
 div ul.autocomplete li p.title, div ul.autocomplete li p { 
@@ -25,15 +24,7 @@ div ul.autocomplete span {
 
 div ul.autocomplete li.active:not(.noResults) {
   color: white;
-  background-color: #293373;
-  background-image: url("../images/arrow_right_active.svg");
-}
-
-div ul.autocomplete li:not(.noResults) {
-  background-image: url("../images/arrow_right.svg");
-  background-position: 6% 50%;
-  background-size: 10px;
-  background-repeat: no-repeat;
+  background-color: #57636B;
 }
 
 div ul.autocomplete li.noResults {
@@ -60,12 +51,12 @@ div ul.autocomplete li.noResults {
 
 .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu .table-condensed {
   position: absolute;
-  top: 0;
-  left: 2;
+  top: -2px;
+  left: 0;
 }
 
 .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu thead tr:first-child th, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu .datepicker tfoot tr:first-child th, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td:not(.disabled), th {
-  color: #293373;
+  color: #57636B;
 }
 
 .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td.disabled, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td.new, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td span.disabled, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td span.new {
@@ -78,6 +69,6 @@ div ul.autocomplete li.noResults {
 }
 
 .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td:not(.disabled).active, .datepicker.datepicker-dropdown.koleo-widget-dropdown-menu td:not(.disabled) span.active {
-  background-color: #293373;
+  background-color: #57636B;
   color: white;
 }

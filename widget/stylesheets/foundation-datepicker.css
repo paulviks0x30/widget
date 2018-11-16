@@ -134,11 +134,11 @@
   }
 
   .datepicker td.active.year,.datepicker th.active.year {
-    background: #2ba6cb
+    background: #27305F;
   }
 
   .datepicker td span.active,.datepicker th span.active {
-    background: #2ba6cb
+    background: #27305F;
   }
 
   .table-striped .datepicker table tr td,.table-striped .datepicker table tr th {

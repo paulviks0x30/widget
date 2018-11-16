@@ -1,9 +1,9 @@
 .koleo-widget-container {
   box-sizing: border-box;
-  background: #E50000;
+  background: white;
   padding: 20px 0;
   width: 100%;
-  color: #293373;
+  color: #57636B;
   font-family: "Noto Sans", Helvetica, Arial, sans-serif;
   text-align: left;
 }
@@ -48,23 +48,21 @@
   height: 46px;
   padding-left: 40px;
   font-size: 0.8125rem;
-  text-transform: uppercase;
-  color: #293373;
+  color: #57636B;
   margin: 0;
 }
 
 .koleo-widget-container .flex-item input[type="text"], .koleo-widget-container .flex-item input[type="text"]:focus, .koleo-widget-container .flex-item input[type="submit"] {
 	box-shadow: none;
 	background-repeat: no-repeat;
-	text-transform: uppercase;
 }
 
 .koleo-widget-container .flex-item input[type="submit"] {
   height: 46px;
   background-image: url("../images/looking_glass.svg");
-  background-color: #e1266b;
+  background-color: #E50000;
   color: white;
-  font-size: 12px;
+  font-size: 13px;
   border: none;
   width: 100%;
   margin: 0;
@@ -74,18 +72,6 @@
   cursor: pointer;
 }
 
-.koleo-widget-container .start_station {
-  background-image: url("../images/from.svg");
-}
-
-.koleo-widget-container .end_station {
-  background-image: url("../images/to.svg");
-}
-
-.koleo-widget-container .date {
-  background-image: url("../images/date.svg");
-}
-
 .koleo-widget-container .start_station, .koleo-widget-container .end_station, .koleo-widget-container .date, .koleo-widget-container .submit {
   background-repeat: no-repeat;
   background-position: 10px 50%;
@@ -93,7 +79,7 @@
 }
 
 .koleo-widget-container ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color:    #293373;
+  color: #57636B;
 }
 .koleo-widget-container :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
   color:    #293373;
