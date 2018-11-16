@@ -1,10 +1,10 @@
 .koleo-widget-container {
   box-sizing: border-box;
-  background: #1e0f64;
+  background: #E50000;
   padding: 20px 0;
   width: 100%;
   color: #293373;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
   text-align: left;
 }
 

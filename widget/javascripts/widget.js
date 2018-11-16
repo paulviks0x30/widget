@@ -58,9 +58,9 @@ var KoleoWidget = {
         var html = ""
         var no_text = $(selector).data('no-text');
         if (no_text !== true) {
-            html = '<a href="https://koleo.pl?utm_medium=widget&utm_source=' + window.location.hostname + '" title="KOLEO - rozkład jazdy i ceny biletów">Rozkład jazdy dostarcza <img src="https://koleo.pl/assets/logo.png"></a>';
+            html = "";
         }
-        html += '<form class="koleo-widget"><div class="flex-item"><input class="start_station" name="start_station" type="text" placeholder="Z" autocomplete="off"></div><div class="flex-item"><input class="end_station" name="end_station" type="text" placeholder="DO" autocomplete="off"></div><div class="flex-item"><input class="date" name="date" type="text" placeholder="KIEDY" autocomplete="off"></div><div class="flex-item"><input class="submit" type="submit" value="Znajdź połączenie i kup bilet!"></div></form>'
+        html += '<form class="koleo-widget"><div class="flex-item"><input class="start_station" name="start_station" type="text" placeholder="Z" autocomplete="off"></div><div class="flex-item"><input class="end_station" name="end_station" type="text" placeholder="DO" autocomplete="off"></div><div class="flex-item"><input class="date" name="date" type="text" placeholder="KIEDY" autocomplete="off"></div><div class="flex-item"><input class="submit" type="submit" value="Szukaj"></div></form>'
         var container = $(selector);
         var that = this;
         container.append(html);
@@ -76,7 +76,7 @@ var KoleoWidget = {
         var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/ssbo/widget/stylesheets/autocomplete.css" });
         var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/ssbo/widget/stylesheets/awesomecomplete.css" });
         var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/ssbo/widget/stylesheets/foundation-datepicker.css" });
-        var cssLink5 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://fonts.googleapis.com/css?family=Lato" });
+        var cssLink5 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://fonts.googleapis.com/css?family=Noto+Sans" });
 
         cssLink.appendTo('head');
         cssLink2.appendTo('head');
