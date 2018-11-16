@@ -49,8 +49,8 @@ var KoleoWidget = {
             var koleoDate = day + '-' + month + '-' + year + '_' + hour + ':00';
 
             var brands = $(selector).data('brands');
-            var selectedCarriers = 'all/' + (brands ? brands + '--' + brands : 'all') + '/closed';
-            window.location = 'https://koleo.pl/search/' + startStation + '/' + endStation + '/' + koleoDate + '/'+ selectedCarriers + '?utm_medium=widget&utm_source=' + window.location.hostname;
+            var selectedCarriers = 'all/' + (brands ? brands + '--' + brands : 'all') + '/auto';
+            window.location = 'https://ssbo.koleo.pl/wyniki/' + startStation + '/' + endStation + '/' + koleoDate + '/*/departure/'+ selectedCarriers + '?utm_medium=widget&utm_source=' + window.location.hostname;
         });
     },
 
@@ -72,10 +72,10 @@ var KoleoWidget = {
     },
 
     addStyles: function() {
-        var cssLink = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/widget/stylesheets/widget.css" });
-        var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/widget/stylesheets/autocomplete.css" });
-        var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/widget/stylesheets/awesomecomplete.css" });
-        var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://widget.koleo.pl/widget/stylesheets/foundation-datepicker.css" });
+        var cssLink = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://ssbo_widget.koleo.pl/widget/stylesheets/widget.css" });
+        var cssLink2 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://ssbo_widget.koleo.pl/widget/stylesheets/autocomplete.css" });
+        var cssLink3 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://ssbo_widget.koleo.pl/widget/stylesheets/awesomecomplete.css" });
+        var cssLink4 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://ssbo_widget.koleo.pl/widget/stylesheets/foundation-datepicker.css" });
         var cssLink5 = $("<link>", { rel: "stylesheet", type: "text/css", href: "https://fonts.googleapis.com/css?family=Lato" });
 
         cssLink.appendTo('head');
@@ -102,7 +102,7 @@ var KoleoWidget = {
 
     getData: function(term, $awesomecomplete, onData) {
         $.ajax({
-            url: 'https://koleo.pl/ls.js?callback=?',
+            url: 'https://ssbo.koleo.pl/ls.js?callback=?',
             type: 'js',
             dataType: 'jsonp',
             data: {
