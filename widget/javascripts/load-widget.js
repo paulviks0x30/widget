@@ -1,9 +1,9 @@
 KoleoWidgetLoader = {
   loadWidget: function(selector) {
     var scriptPaths = ["//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js",
-                       "//ssbo_widget.koleo.pl/widget/javascripts/foundation-datepicker.js",
-                       "//ssbo_widget.koleo.pl/widget/javascripts/jquery.awesomecomplete.js",
-                       "//ssbo_widget.koleo.pl/widget/javascripts/widget.js"];
+                       "//widget.koleo.pl/ssbo/widget/javascripts/foundation-datepicker.js",
+                       "//widget.koleo.pl/ssbo/widget/javascripts/jquery.awesomecomplete.js",
+                       "//widget.koleo.pl/ssbo/widget/javascripts/widget.js"];
     this.loadScripts(scriptPaths, selector);
   },
 
