@@ -1,4 +1,5 @@
 var KoleoWidget = {
+    KNOWN_STATIONS: {},
     SPECIAL_CHAR_REGEXP:       (/[_|\/|\s]+/g),
     MULTI_SEPARATOR_REGEXP:    (/[\-]+/g),
     TRIM_SEPARATOR_REGEXP:     (/^-+|-+$/g),
@@ -32,8 +33,23 @@ var KoleoWidget = {
         $(selector).find('form.koleo-widget').on('submit', function(event) {
             event.preventDefault();
 
-            var startStation = that.parameterize($(selector).find('.start_station').val());
-            var endStation = that.parameterize($(selector).find('.end_station').val());
+            var stationSelectors = {
+                start: $(selector).find('.start_station'),
+                end: $(selector).find('.end_station')
+            };
+            var stationValues = {
+                start: that.KNOWN_STATIONS[stationSelectors.start.val().trim().toLocaleLowerCase()],
+                end: that.KNOWN_STATIONS[stationSelectors.end.val().trim().toLocaleLowerCase()]
+            };
+
+            if (!stationValues.start) {
+                stationSelectors.start.focus();
+                return;
+            } else if (!stationValues.end) {
+                stationSelectors.end.focus();
+                return;
+            }
+
             var formattedDate = that.formatDate($(selector).find('.date').val());
             var date = new Date(formattedDate);
 
@@ -50,12 +66,12 @@ var KoleoWidget = {
 
             var brands = $(selector).data('brands');
             var selectedCarriers = 'all/' + (brands ? brands + '--' + brands : 'all') + '/auto';
-            window.location = 'https://ssbo.koleo.pl/wyniki/' + startStation + '/' + endStation + '/' + koleoDate + '/*/departure/'+ selectedCarriers + '?utm_medium=widget&utm_source=' + window.location.hostname;
+            window.location = 'https://ssbo.koleo.pl/wyniki/' + stationValues.start + '/' + stationValues.end + '/' + koleoDate + '/*/departure/' + selectedCarriers + '?utm_medium=widget&utm_source=' + window.location.hostname;
         });
     },
 
     insertWidget: function(selector) {
-        var html = ""
+        var html = "";
         var no_text = $(selector).data('no-text');
         if (no_text !== true) {
             html = "";
@@ -88,7 +104,7 @@ var KoleoWidget = {
     showLiveSearch: function(selector) {
         $(selector).find('.start_station, .end_station').awesomecomplete({
             noResultsMessage: 'Nie ma takiej stacji.',
-            dataMethod: this.getData,
+            dataMethod: this.getData(this),
             valueFunction: function(dataItem) {
                 return dataItem.name;
             },
@@ -100,23 +116,28 @@ var KoleoWidget = {
         });
     },
 
-    getData: function(term, $awesomecomplete, onData) {
-        $.ajax({
-            url: 'https://ssbo.koleo.pl/ls.js?callback=?',
-            type: 'js',
-            dataType: 'jsonp',
-            data: {
-                q: term
-            },
+    getData: function (widgetContext) {
+        return function (term, $awesomecomplete, onData) {
+            $.ajax({
+                url: 'https://ssbo.koleo.pl/ls.js?callback=?',
+                type: 'js',
+                dataType: 'jsonp',
+                data: {
+                    q: term
+                },
 
-            success: function(data) {
-               onData(data.stations);
-            },
+                success: function (data) {
+                    data.stations.forEach(function (station) {
+                        widgetContext.KNOWN_STATIONS[station.name.toLocaleLowerCase()] = station.ibnr;
+                    });
+                    onData(data.stations);
+                },
 
-            error: function(data) {
-                onData([]);
-            }
-        });
+                error: function (data) {
+                    onData([]);
+                }
+            });
+        };
     },
 
     bindDatePicker: function(selector) {
