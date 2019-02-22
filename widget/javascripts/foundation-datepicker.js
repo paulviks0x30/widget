@@ -1316,9 +1316,9 @@
         },
         headTemplate: '<thead>' +
             '<tr>'+
-                '<th class="prev"></th>'+
+                '<th class="prev"><i class="datepicker-arrow arrow-left"/></th>'+
                 '<th colspan="5" class="switch"></th>'+
-                '<th class="next"></th>'+
+                '<th class="next"><i class="datepicker-arrow arrow-right"/></th>'+
             '</tr>'+
             '</thead>',
         contTemplate: '<tbody><tr><td colspan="7"></td></tr></tbody>',

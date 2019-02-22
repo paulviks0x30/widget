@@ -193,4 +193,20 @@
       color: grey;
     }
 
+  .datepicker-arrow {
+    border: solid grey;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .arrow-right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .arrow-left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
