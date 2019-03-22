@@ -66,7 +66,7 @@ var KoleoWidget = {
 
             var brands = $(selector).data('brands');
             var selectedCarriers = 'all/' + (brands ? brands + '--' + brands : 'all') + '/auto';
-            window.location = 'https://bilety.polregio.pl/wyniki/' + stationValues.start + '/' + stationValues.end + '/' + koleoDate + '/*/departure/' + selectedCarriers + '?utm_medium=widget&utm_source=' + window.location.hostname;
+            window.location = 'https://bilety.polregio.pl/wyniki/' + stationValues.start + '/' + stationValues.end + '/' + koleoDate + '/*/departure/' + selectedCarriers;
         });
     },
 
