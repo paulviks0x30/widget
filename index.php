@@ -1,0 +1,1 @@
+<?php header('Location: /example_embed_simple.html') ; ?>
